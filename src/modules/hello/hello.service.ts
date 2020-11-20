@@ -10,8 +10,8 @@ export class HelloService {
     return `GET Hello One： ${id}`;
   }
 
-  createHelloOne(name: string, age: number): string {
-    return `Create Hello One：name-${name}::age-${age}`;
+  createHelloOne(id: string, age: number): string {
+    return `Create Hello One：id-${id}::age-${age}`;
   }
 
   updateHelloOne(id: number): string {
