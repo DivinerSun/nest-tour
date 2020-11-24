@@ -8,10 +8,24 @@ import {
   Body,
 } from '@nestjs/common';
 import { Request } from 'express';
+import { Cat } from './cats.interface';
 import { CreateCatDto } from './cats.dto';
+import { CatsService } from './cats.service';
 
 @Controller('cats')
 export class CatsController {
+  constructor(private catsService: CatsService) {}
+
+  @Get('list')
+  async findList(): Promise<Cat[]> {
+    return this.catsService.findAll();
+  }
+
+  @Post()
+  async createOne(createCatDto: CreateCatDto) {
+    this.catsService.create(createCatDto);
+  }
+
   @Post()
   create(@Body() createCatDto: CreateCatDto): string {
     console.log('createCatDto: ', createCatDto);
