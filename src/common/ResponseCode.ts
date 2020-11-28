@@ -1,0 +1,8 @@
+export enum ResponseCode {
+  SUCCESS = 2000,
+  ERROR = 5000,
+  NOT_LOGIN = 3000,
+  PERMISSION_ERROR = 4003,
+  NOT_FOUND = 4004,
+  METHOD_NOT_ALLOWED = 4005,
+}

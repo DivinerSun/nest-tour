@@ -1,10 +1,11 @@
 import { Module, NestModule, MiddlewareConsumer } from '@nestjs/common';
 import { LoggerMiddleware } from '../middlewares/logger.middleware';
 import { CatsModule } from './cats/cats.module';
+import { ExceptionModule } from './exception/exception.module';
 import { HelloModule } from './hello/hello.module';
 
 @Module({
-  imports: [HelloModule, CatsModule],
+  imports: [HelloModule, CatsModule, ExceptionModule],
 })
 export class AllModule implements NestModule {
   configure(consumer: MiddlewareConsumer) {
