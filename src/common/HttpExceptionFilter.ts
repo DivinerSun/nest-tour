@@ -20,6 +20,10 @@ export class HttpExceptionFilter implements ExceptionFilter {
       message: '成功',
     };
     switch (status) {
+      case 400:
+        exRes.code = ResponseCode.PARAMETER_ERROR;
+        exRes.message = '请求参数类型错误';
+        break;
       case 403:
         exRes.code = ResponseCode.PERMISSION_ERROR;
         exRes.message = '您没有访问权限';
